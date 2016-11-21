@@ -28,7 +28,7 @@ public class tugas1 extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        diskon = new javax.swing.JTextField();
+        dsk = new javax.swing.JTextField();
         barang1 = new javax.swing.JTextField();
         barang2 = new javax.swing.JTextField();
         barang3 = new javax.swing.JTextField();
@@ -53,13 +53,13 @@ public class tugas1 extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(50, 90, 120, 30);
 
-        diskon.addActionListener(new java.awt.event.ActionListener() {
+        dsk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                diskonActionPerformed(evt);
+                dskActionPerformed(evt);
             }
         });
-        getContentPane().add(diskon);
-        diskon.setBounds(180, 170, 190, 30);
+        getContentPane().add(dsk);
+        dsk.setBounds(180, 170, 190, 30);
         getContentPane().add(barang1);
         barang1.setBounds(180, 50, 190, 30);
         getContentPane().add(barang2);
@@ -113,9 +113,9 @@ public class tugas1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void diskonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diskonActionPerformed
+    private void dskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dskActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_diskonActionPerformed
+    }//GEN-LAST:event_dskActionPerformed
 
     private void barang3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barang3ActionPerformed
         // TODO add your handling code here:
@@ -123,7 +123,14 @@ public class tugas1 extends javax.swing.JFrame {
 
     private void prosesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosesActionPerformed
         // TODO add your handling code here:
-
+        int h1=Integer.parseInt(barang1.getText());
+        int h2=Integer.parseInt(barang2.getText());
+        int h3=Integer.parseInt(barang3.getText());
+        int diskon=Integer.parseInt(dsk.getText());
+        int totalbarang=h1+h2+h3;
+        int hsdiskon=totalbarang-((totalbarang/100)*diskon);
+        TA2.setText("Harga Barang 1= "+String.valueOf(h1)+"\nHarga Barang 2="+String.valueOf(h2)+"\nHarga Barang 3= "+String.valueOf(h3)+"\nTotal Harga= "
+                +String.valueOf(totalbarang)+"\nDiskon=  "+String.valueOf(diskon)+"% \nTotal Pembayaran= "+String.valueOf(hsdiskon));
 
     }//GEN-LAST:event_prosesActionPerformed
 
@@ -167,7 +174,7 @@ public class tugas1 extends javax.swing.JFrame {
     private javax.swing.JTextField barang1;
     private javax.swing.JTextField barang2;
     private javax.swing.JTextField barang3;
-    private javax.swing.JTextField diskon;
+    private javax.swing.JTextField dsk;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
